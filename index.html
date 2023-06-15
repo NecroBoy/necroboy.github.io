@@ -38,7 +38,7 @@
             
 
             // Маркер Хабаровск дом
-            DG.marker([48.348480, 135.071800], {icon: myIcon, zIndexOffset: -1}).addTo(map);
+            DG.marker([48.34, 135.07], {icon: myIcon, zIndexOffset: -1}).addTo(map);
 
             // Маркер Хабаровск фильтр
             DG.marker([48.485508, 135.076777], {icon: white_server, zIndexOffset: -1}).addTo(map);
@@ -57,7 +57,7 @@
 
 
             // Фильтр -> Дом
-            DG.Wkt.geoJsonLayer('MULTILINESTRING((135.071800 48.348480, 135.076777 48.485508))').addTo(map);
+            DG.Wkt.geoJsonLayer('MULTILINESTRING((135.07 48.34, 135.076777 48.485508))').addTo(map);
 
             // Витя -> Фильтр
             DG.Wkt.geoJsonLayer('MULTILINESTRING((135.031253 48.534389, 135.076777 48.485508))').addTo(map);
