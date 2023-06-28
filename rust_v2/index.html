@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+    <title>Document</title>
+    <script type="text/javascript">
+        var map;
+    
+        DG.then(function () {
+            map = DG.map('map', {
+                center: [57.939959, 105.494658],
+                zoom: 4
+            });
+            
+
+
+            
+            var myIcon = DG.icon({
+                iconUrl: '5178536.png',
+                iconSize: [40, 40]
+            });
+
+
+            var white_server = DG.icon({
+                iconUrl: '51785361.png',
+                iconSize: [40, 40]
+            });
+
+            var mirror = DG.icon({
+                iconUrl: 'mirror_1fa9e.png',
+                iconSize: [40, 40]
+            });
+
+            
+
+            // Маркер Хабаровск дом
+            DG.marker([48.34, 135.07], {icon: myIcon, zIndexOffset: -1}).addTo(map);
+
+            // Маркер Хабаровск фильтр
+            DG.marker([48.485508, 135.076777], {icon: white_server, zIndexOffset: -1}).addTo(map);
+
+            // Маркер Владивосток
+            DG.marker([43.121822, 131.898791], {icon: mirror, zIndexOffset: -1}).addTo(map);
+
+            // Маркер Витя
+            DG.marker([48.534389, 135.031253], {icon: mirror, zIndexOffset: -1}).addTo(map);
+            
+            // Маркер Красноярск
+            DG.marker([56.013772, 92.888000], {icon: mirror, zIndexOffset: -1}).addTo(map);
+
+            // Маркер Берлина
+            DG.marker([52.477800, 13.377526], {icon: mirror, zIndexOffset: -1}).addTo(map);
+
+
+            // Фильтр -> Дом
+            DG.Wkt.geoJsonLayer('MULTILINESTRING((135.07 48.34, 135.076777 48.485508))').addTo(map);
+
+            // Витя -> Фильтр
+            DG.Wkt.geoJsonLayer('MULTILINESTRING((135.031253 48.534389, 135.076777 48.485508))').addTo(map);
+
+            // Красноярск -> Фильтр
+            DG.Wkt.geoJsonLayer('MULTILINESTRING((92.888000 56.013772, 135.076777 48.485508))').addTo(map);
+
+            // Владивосток -> Фильтр
+            DG.Wkt.geoJsonLayer('MULTILINESTRING((131.898791 43.121822, 135.076777 48.485508))').addTo(map);
+
+
+            // Берлин -> Фильтр
+            DG.Wkt.geoJsonLayer('MULTILINESTRING((13.377526 52.477800, 135.076777 48.485508))').addTo(map);
+        });
+    </script>
+    <style>
+        img {
+            position: relative;
+            top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map" style="width:100%; height:800px"></div>
+    <h3>Обозначения иконок</h3>
+    <p>
+        <img width="32px" src="5178536.png" alt=""> - Главный сервер (Закрытый) 
+        <img width="32px" src="51785361.png" alt=""> - Арендованный сервер фильтрации
+        <img width="32px" src="mirror_1fa9e.png" alt=""> - Фейковое зеркало раста с проксированием
+        Нигга
+    </p>
+</body>
+</html>
+
+
