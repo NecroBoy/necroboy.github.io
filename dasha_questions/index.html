@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Survey-Form freeCodeCamp</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+
+      <div class="box" id="box">
+        <div class="form">
+          <h1 id="title" style="text-align: center;">Вопрос 1 из 12 </h1>
+          <p id="description" style="text-align: justify;">Я никогда не перестаю думать о своем искусстве даже вне рабочих часов.</p>
+
+            <div class="wrapper">
+
+
+
+
+
+              <div style=" display: flex;">
+                <button onclick="nextQuestion()">Да</button>
+                <button onclick="nextQuestion()">Нет</button>
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+<script>
+
+
+var current_question = 1;
+
+function nextQuestion() {
+
+
+    var questions = [
+        "Я никогда не оставляю свои старые произведения и всегда нахожу в них что-то новое.",
+        "Я никогда не могу избежать периодов творческой затяжки и блокировки.",
+        "Я никогда не мог сделать искусство без кофе. Эссе, масло на холсте, кто бы что ни было - сначала кофе!",
+        "Я никогда не могу понять, как нам удается так долго обсуждать то, какое искусство кто-то создал, вместо того, чтобы просто наслаждаться им.",
+        "Thank you for taking your time to improve our Online Education System6",
+        "Thank you for taking your time to improve our Online Education System7",
+        "Thank you for taking your time to improve our Online Education System8",
+        "Thank you for taking your time to improve our Online Education System9",
+        "Thank you for taking your time to improve our Online Education System10",
+        "Thank you for taking your time to improve our Online Education System11",
+        "Thank you for taking your time to improve our Online Education System12",
+    ]
+
+    
+
+    document.getElementById("description").innerHTML = questions[current_question - 1];
+
+    
+
+    current_question++;
+
+    document.getElementById("title").innerHTML = `Вопрос ${current_question} из 12`;
+
+    if (current_question > 12) {
+
+        document.getElementById("box").innerHTML = `
+            <p id="description">
+            На самом деле этот тест не показывает то, насколько вы являетесь творческой личностью как и в жизни. Не существует точных характеристик, набора качеств, подтверджающих документов, даже диплома, который бы определял вас как творческую личность. 
+            
+            <br><br>Ведь только то, как вы относитесь к себе, как вы видете этот окружающий мир, как вы ощущаете жизнь вокруг себя, только это определяет вас и каждый из нас является творческий, ведь творчество - это есть выражение ваших мыслей, вашего состояния души, это то что значимо для вас.
+            </p>`;
+
+    }
+
+}
+
+
+
+</script>
+  
+</body>
+</html>
