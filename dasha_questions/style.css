@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
+
+
 * {
   margin: 0px;
   padding: 0px;
@@ -13,8 +15,9 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(-135deg, #808080, #ffb3b3);
-  background-size: 400% 400%;
+  background-image: url("back.jpg");
+
+
  /* animation: gradient 15s ease infinite;*/
 }
 
