@@ -2,16 +2,31 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Survey-Form freeCodeCamp</title>
+  <title>Тест на творческую личность</title>
   <link rel="stylesheet" href="./style.css">
   <meta name="viewport" content="initial-scale=1, user-scalable=no">
+  <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 <body>
 <!-- partial:index.partial.html -->
 
       <div class="box" id="box">
-        <div class="form">
-          <h1 id="title" style="text-align: center;">Вопрос 1 из 12 </h1>
+        <div class="form" id="form">
+          <p id="description" style="text-align: justify;">Здесь будет какая-то инфа которую придумает Дашуля, это интро перед тем как начать тест 🧑</p>
+          <button onclick="startTest()">Начать тест 🧑‍🎨</button>
+        </div>
+      </div>
+
+<script>
+
+
+
+var current_question = 1;
+
+
+function startTest() {
+
+  var ttt = `          <h1 id="title" style="text-align: center;">Вопрос 1 из 12 </h1>
           <p id="description" style="text-align: justify;">Я никогда не понимаю, как мои креативные идеи всегда приходят ко мне в душу, именно когда я в душe.</p>
 
             <div class="wrapper">
@@ -25,17 +40,15 @@
                 <button onclick="nextQuestion()">Нет</button>
               </div>
             </div>
+`;
 
-        </div>
-      </div>
+document.getElementById("form").innerHTML = ttt;
 
-<script>
-
-
-
-var current_question = 1;
+}
 
 function nextQuestion() {
+
+
 
 
     var questions = [
@@ -56,7 +69,7 @@ function nextQuestion() {
 
     document.getElementById("description").innerHTML = questions[current_question - 1];
 
-    
+
 
     current_question++;
 
@@ -70,6 +83,15 @@ function nextQuestion() {
             
             <br><br>Ведь только то, как вы относитесь к себе, как вы видете этот окружающий мир, как вы ощущаете жизнь вокруг себя, только это определяет вас и каждый из нас является творческий, ведь творчество - это есть выражение ваших мыслей, вашего состояния души, это то что значимо для вас.
             </p>`;
+
+
+            var audio = new Audio('new_message_notice.wav');
+            audio.play();
+
+    } else {
+
+      var audio = new Audio('new_message-3.mp3');
+    audio.play();
 
     }
 
