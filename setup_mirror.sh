@@ -5,16 +5,16 @@ key="_client2_58710902587321"
 Net_IP=$(hostname -I)
 Net_IP=${Net_IP::-1}
 
-sudo apt-get update -y && 
-sudo apt-get upgrade -y && 
-sudo apt-get install mono-devel mono-complete wine screen zip unzip -y && 
-wget https://dl.winehq.org/wine/wine-mono/8.0.0/wine-mono-8.0.0-x86.msi &&
-wine msiexec /i wine-mono-8.0.0-x86.msi &&
+sudo apt-get update -y 
+sudo apt-get upgrade -y 
+sudo apt-get install mono-devel mono-complete wine screen zip unzip -y 
+wget https://dl.winehq.org/wine/wine-mono/8.0.0/wine-mono-8.0.0-x86.msi 
+wine msiexec /i wine-mono-8.0.0-x86.msi 
 
-mkdir hello_mirror &&
-cd hello_mirror &&
-wget https://github.com/NecroBoy/Emuu/releases/download/11/emu.zip &&
-unzip emu.zip &&
+mkdir hello_mirror 
+cd hello_mirror 
+wget https://github.com/NecroBoy/Emuu/releases/download/11/emu.zip 
+unzip emu.zip 
 
 tee -a /etc/systemd/system/proxy.service <<-EOF
 [Unit]
@@ -112,8 +112,8 @@ tee -a /root/hello_mirror/configs/1.json <<-EOF
 }
 EOF
 
-systemctl daemon-reload &&
-systemctl enable proxy --now &&
-systemctl enable mirror --now &&
+systemctl daemon-reload 
+systemctl enable proxy --now 
+systemctl enable mirror --now 
 
 echo "Всё было настроено и запущено, не забудьте добавить $Net_IP в SteamAuthBypass.json конфиг"
