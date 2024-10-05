@@ -1,0 +1,12 @@
+{
+   "nakrutochka":{
+      "maxCount":999,
+      "maxOnline":999,
+      "expireDate":"00/00/01/07/2100"
+   },
+   "key_for_mirrors_guys":{
+      "maxCount":999,
+      "maxOnline":999,
+      "expireDate":"00/00/01/07/2100"
+   }
+}
