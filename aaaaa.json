@@ -8,10 +8,5 @@
       "maxCount": 4,
       "maxOnline": 999,
       "expireDate":"00/00/01/07/2100"
-   },
-   "_client777_77702384533":{
-      "maxCount":999,
-      "maxOnline":999,
-      "expireDate":"00/00/01/07/2100"
    }
 }
